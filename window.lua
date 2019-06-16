@@ -14,7 +14,7 @@
 -- along with this program. If not, see <https://www.gnu.org/licenses/>.
 
 
-units = {
+local units = {
 	up_small    = { x = 0,  y = -5 },
 	right_small = { x = 5,  y = 0 },
 	down_small  = { x = 0,  y = 5 },
@@ -40,7 +40,7 @@ units = {
 	maximum = { x = 0.00, y = 0.00, w = 1.00, h = 1.00 }
 }
 
-window = {}
+local window = {}
 function window.up_small()
 	hs.window.focusedWindow():move(units.up_small, nil, false, 0)
 end
@@ -139,32 +139,36 @@ function window.move_to_top()
 end
 
 
-window_mode = hs.hotkey.modal.new({'ctrl', 'option'}, 'w', 'Window')
-window_mode:bind({'ctrl', 'option'}, 'w', 'Window Off', function()
-	window_mode:exit()
-end)
+function window:bindModal(modifiers, keycode)
+	window_mode = hs.hotkey.modal.new(modifiers, keycode, 'Window')
+	window_mode:bind(modifiers, keycode, 'Window Off', function()
+		window_mode:exit()
+	end)
 
-window_mode:bind({'shift'}, 'k', window.up_small,    nil, window.up_small)
-window_mode:bind({'shift'}, 'l', window.right_small, nil, window.right_small)
-window_mode:bind({'shift'}, 'j', window.down_small,  nil, window.down_small)
-window_mode:bind({'shift'}, 'h', window.left_small,  nil, window.left_small)
+	window_mode:bind({'shift'}, 'k', window.up_small,    nil, window.up_small)
+	window_mode:bind({'shift'}, 'l', window.right_small, nil, window.right_small)
+	window_mode:bind({'shift'}, 'j', window.down_small,  nil, window.down_small)
+	window_mode:bind({'shift'}, 'h', window.left_small,  nil, window.left_small)
 
-window_mode:bind({}, 'k', window.up_med,    nil, window.up_med)
-window_mode:bind({}, 'l', window.right_med, nil, window.right_med)
-window_mode:bind({}, 'j', window.down_med,  nil, window.down_med)
-window_mode:bind({}, 'h', window.left_med,  nil, window.left_med)
+	window_mode:bind({}, 'k', window.up_med,    nil, window.up_med)
+	window_mode:bind({}, 'l', window.right_med, nil, window.right_med)
+	window_mode:bind({}, 'j', window.down_med,  nil, window.down_med)
+	window_mode:bind({}, 'h', window.left_med,  nil, window.left_med)
 
-window_mode:bind({}, 'i', window.move_to_top,  nil, window.move_to_top)
+	window_mode:bind({}, 'i', window.move_to_top,  nil, window.move_to_top)
 
-window_mode:bind({}, ']', function() hs.window.focusedWindow():moveOneScreenEast(true, false, 0) end)
-window_mode:bind({}, '[', function() hs.window.focusedWindow():moveOneScreenWest(true, false, 0) end)
+	window_mode:bind({}, ']', function() hs.window.focusedWindow():moveOneScreenEast(true, false, 0) end)
+	window_mode:bind({}, '[', function() hs.window.focusedWindow():moveOneScreenWest(true, false, 0) end)
 
-window_mode:bind({'shift'}, 'e', window.decrease_up,    nil, window.decrease_up)
-window_mode:bind({'shift'}, 'd', window.increase_down,  nil, window.increase_down)
-window_mode:bind({'shift'}, 'f', window.increase_right, nil, window.increase_right)
-window_mode:bind({'shift'}, 's', window.decrease_left,  nil, window.decrease_left)
+	window_mode:bind({'shift'}, 'e', window.decrease_up,    nil, window.decrease_up)
+	window_mode:bind({'shift'}, 'd', window.increase_down,  nil, window.increase_down)
+	window_mode:bind({'shift'}, 'f', window.increase_right, nil, window.increase_right)
+	window_mode:bind({'shift'}, 's', window.decrease_left,  nil, window.decrease_left)
 
-window_mode:bind({}, 'e', window.decrease_up_med,    nil, window.decrease_up_med)
-window_mode:bind({}, 'd', window.increase_down_med,  nil, window.increase_down_med)
-window_mode:bind({}, 'f', window.increase_right_med, nil, window.increase_right_med)
-window_mode:bind({}, 's', window.decrease_left_med,  nil, window.decrease_left_med)
+	window_mode:bind({}, 'e', window.decrease_up_med,    nil, window.decrease_up_med)
+	window_mode:bind({}, 'd', window.increase_down_med,  nil, window.increase_down_med)
+	window_mode:bind({}, 'f', window.increase_right_med, nil, window.increase_right_med)
+	window_mode:bind({}, 's', window.decrease_left_med,  nil, window.decrease_left_med)
+end
+
+return window
