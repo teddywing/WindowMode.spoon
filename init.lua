@@ -1,3 +1,32 @@
+--- === WindowMode ===
+---
+--- Adds a hotkey mode for manipulating windows.
+---
+--- Upon activating the mode, the following shortcuts are available:
+---
+--- h: Move window left 20 units
+--- j: Move window down 20 units
+--- k: Move window up 20 units
+--- l: Move window right 20 units
+---
+--- Shift-h: Move window left 5 units
+--- Shift-j: Move window down 5 units
+--- Shift-k: Move window up 5 units
+--- Shift-l: Move window right 5 units
+---
+--- [: Move window left one screen
+--- ]: Move window right one screen
+---
+--- e: Reduce window height 20 units
+--- s: Reduce window width 20 units
+--- d: Increase window height 20 units
+--- f: Increase window width 20 units
+---
+--- Shift-e: Reduce window height 5 units
+--- Shift-s: Reduce window width 5 units
+--- Shift-d: Increase window height 5 units
+--- Shift-f: Increase window width 5 units
+
 -- Copyright (c) 2019  Teddy Wing
 --
 -- This program is free software: you can redistribute it and/or modify
@@ -31,6 +60,13 @@ obj.spoonPath = script_path()
 
 local window = dofile(obj.spoonPath .. '/window.lua')
 
+--- WindowMode:bindModal(mapping)
+--- Method
+--- Bind keys for WindowMode
+---
+--- Parameters:
+---  * mapping – A table containing hotkey modifier/key details for the following items:
+---   * mode – Activate and deactivate window mode
 function obj:bindHotkeys(keys)
 	local mode = keys['mode']
 	window:bindModal(mode[1], mode[2])
