@@ -4,15 +4,20 @@
 ---
 --- Upon activating the mode, the following shortcuts are available:
 ---
---- h: Move window left 20 units
---- j: Move window down 20 units
---- k: Move window up 20 units
---- l: Move window right 20 units
+--- h: Move window left 100 units
+--- j: Move window down 100 units
+--- k: Move window up 100 units
+--- l: Move window right 100 units
 ---
---- Shift-h: Move window left 5 units
---- Shift-j: Move window down 5 units
---- Shift-k: Move window up 5 units
---- Shift-l: Move window right 5 units
+--- Shift-h: Move window left 20 units
+--- Shift-j: Move window down 20 units
+--- Shift-k: Move window up 20 units
+--- Shift-l: Move window right 20 units
+---
+--- Option-h: Move window left 5 units
+--- Option-j: Move window down 5 units
+--- Option-k: Move window up 5 units
+--- Option-l: Move window right 5 units
 ---
 --- i: Move window to top
 ---
