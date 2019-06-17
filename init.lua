@@ -14,6 +14,8 @@
 --- Shift-k: Move window up 5 units
 --- Shift-l: Move window right 5 units
 ---
+--- i: Move window to top
+---
 --- [: Move window left one screen
 --- ]: Move window right one screen
 ---

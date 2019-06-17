@@ -25,6 +25,10 @@ Upon activating the mode, the following shortcuts are available:
 | ``Shift-l`` | Move window right 5 units  |
 +-------------+----------------------------+
 
++-------+---------------------+
+| ``i`` | Move window to top  |
++-------+---------------------+
+
 +-------+------------------------------+
 | ``[`` | Move window left one screen  |
 +-------+------------------------------+
