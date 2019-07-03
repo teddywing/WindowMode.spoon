@@ -42,6 +42,12 @@ local units = {
 	decrease_up_med   = { w = 0,   h = -20 },
 	decrease_left_med = { w = -20,  h = 0 },
 
+	increase_right_lg = { w = 100, h = 0 },
+	increase_down_lg  = { w = 0,  h = 100 },
+
+	decrease_up_lg   = { w = 0,   h = -100 },
+	decrease_left_lg = { w = -100,  h = 0 },
+
 	maximum = { x = 0.00, y = 0.00, w = 1.00, h = 1.00 }
 }
 
@@ -151,6 +157,30 @@ function window.decrease_left_med()
 	)
 end
 
+function window.increase_right_lg()
+	hs.window.focusedWindow():setSize(
+		window.relative_size(hs.window.focusedWindow(), units.increase_right_lg)
+	)
+end
+
+function window.increase_down_lg()
+	hs.window.focusedWindow():setSize(
+		window.relative_size(hs.window.focusedWindow(), units.increase_down_lg)
+	)
+end
+
+function window.decrease_up_lg()
+	hs.window.focusedWindow():setSize(
+		window.relative_size(hs.window.focusedWindow(), units.decrease_up_lg)
+	)
+end
+
+function window.decrease_left_lg()
+	hs.window.focusedWindow():setSize(
+		window.relative_size(hs.window.focusedWindow(), units.decrease_left_lg)
+	)
+end
+
 
 function window.move_to_top()
 	local position = hs.window.focusedWindow():topLeft()
@@ -186,15 +216,20 @@ function window:bindModal(modifiers, keycode)
 	window_mode:bind({}, ']', function() hs.window.focusedWindow():moveOneScreenEast(true, false, 0) end)
 	window_mode:bind({}, '[', function() hs.window.focusedWindow():moveOneScreenWest(true, false, 0) end)
 
-	window_mode:bind({'shift'}, 'e', window.decrease_up,    nil, window.decrease_up)
-	window_mode:bind({'shift'}, 'd', window.increase_down,  nil, window.increase_down)
-	window_mode:bind({'shift'}, 'f', window.increase_right, nil, window.increase_right)
-	window_mode:bind({'shift'}, 's', window.decrease_left,  nil, window.decrease_left)
+	window_mode:bind({'option'}, 'e', window.decrease_up,    nil, window.decrease_up)
+	window_mode:bind({'option'}, 'd', window.increase_down,  nil, window.increase_down)
+	window_mode:bind({'option'}, 'f', window.increase_right, nil, window.increase_right)
+	window_mode:bind({'option'}, 's', window.decrease_left,  nil, window.decrease_left)
 
-	window_mode:bind({}, 'e', window.decrease_up_med,    nil, window.decrease_up_med)
-	window_mode:bind({}, 'd', window.increase_down_med,  nil, window.increase_down_med)
-	window_mode:bind({}, 'f', window.increase_right_med, nil, window.increase_right_med)
-	window_mode:bind({}, 's', window.decrease_left_med,  nil, window.decrease_left_med)
+	window_mode:bind({'shift'}, 'e', window.decrease_up_med,    nil, window.decrease_up_med)
+	window_mode:bind({'shift'}, 'd', window.increase_down_med,  nil, window.increase_down_med)
+	window_mode:bind({'shift'}, 'f', window.increase_right_med, nil, window.increase_right_med)
+	window_mode:bind({'shift'}, 's', window.decrease_left_med,  nil, window.decrease_left_med)
+
+	window_mode:bind({}, 'e', window.decrease_up_lg,    nil, window.decrease_up_lg)
+	window_mode:bind({}, 'd', window.increase_down_lg,  nil, window.increase_down_lg)
+	window_mode:bind({}, 'f', window.increase_right_lg, nil, window.increase_right_lg)
+	window_mode:bind({}, 's', window.decrease_left_lg,  nil, window.decrease_left_lg)
 end
 
 return window

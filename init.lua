@@ -24,15 +24,20 @@
 --- [: Move window left one screen
 --- ]: Move window right one screen
 ---
---- e: Reduce window height 20 units
---- s: Reduce window width 20 units
---- d: Increase window height 20 units
---- f: Increase window width 20 units
+--- e: Reduce window height 100 units
+--- s: Reduce window width 100 units
+--- d: Increase window height 100 units
+--- f: Increase window width 100 units
 ---
---- Shift-e: Reduce window height 5 units
---- Shift-s: Reduce window width 5 units
---- Shift-d: Increase window height 5 units
---- Shift-f: Increase window width 5 units
+--- Shift-e: Reduce window height 20 units
+--- Shift-s: Reduce window width 20 units
+--- Shift-d: Increase window height 20 units
+--- Shift-f: Increase window width 20 units
+---
+--- Option-e: Reduce window height 5 units
+--- Option-s: Reduce window width 5 units
+--- Option-d: Increase window height 5 units
+--- Option-f: Increase window width 5 units
 
 -- Copyright (c) 2019  Teddy Wing
 --
