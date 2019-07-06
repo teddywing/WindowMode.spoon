@@ -23,39 +23,19 @@
     "Constructor" : [
 
     ],
-    "items" : [
-      {
-        "desc" : "Bind keys for WindowMode",
-        "stripped_doc" : [
-          "Bind keys for WindowMode",
-          ""
-        ],
-        "def" : "WindowMode:bindModal(mapping)",
-        "doc" : "Bind keys for WindowMode\n\nParameters:\n * mapping – A table containing hotkey modifier\/key details for the following items:\n  * mode – Activate and deactivate window mode",
-        "notes" : [
-
-        ],
-        "signature" : "WindowMode:bindModal(mapping)",
-        "type" : "Method",
-        "returns" : [
-
-        ],
-        "name" : "bindModal",
-        "parameters" : [
-          " * mapping – A table containing hotkey modifier\/key details for the following items:",
-          "  * mode – Activate and deactivate window mode"
-        ]
-      }
-    ],
+    "doc" : "Adds a hotkey mode for manipulating windows.\n\nUpon activating the mode, the following shortcuts are available:\n\nh: Move window left 100 units\nj: Move window down 100 units\nk: Move window up 100 units\nl: Move window right 100 units\n\nShift-h: Move window left 20 units\nShift-j: Move window down 20 units\nShift-k: Move window up 20 units\nShift-l: Move window right 20 units\n\nOption-h: Move window left 5 units\nOption-j: Move window down 5 units\nOption-k: Move window up 5 units\nOption-l: Move window right 5 units\n\ni: Move window to top\n\n[: Move window left one screen\n]: Move window right one screen\n\ne: Reduce window height 100 units\ns: Reduce window width 100 units\nd: Increase window height 100 units\nf: Increase window width 100 units\n\nShift-e: Reduce window height 20 units\nShift-s: Reduce window width 20 units\nShift-d: Increase window height 20 units\nShift-f: Increase window width 20 units\n\nOption-e: Reduce window height 5 units\nOption-s: Reduce window width 5 units\nOption-d: Increase window height 5 units\nOption-f: Increase window width 5 units\n\nc: Increase window height to bottom",
     "Method" : [
       {
-        "desc" : "Bind keys for WindowMode",
+        "doc" : "Bind keys for WindowMode\n\nParameters:\n * mapping – A table containing hotkey modifier\/key details for the following items:\n  * mode – Activate and deactivate window mode",
+        "def" : "WindowMode:bindModal(mapping)",
         "stripped_doc" : [
           "Bind keys for WindowMode",
           ""
         ],
-        "def" : "WindowMode:bindModal(mapping)",
-        "doc" : "Bind keys for WindowMode\n\nParameters:\n * mapping – A table containing hotkey modifier\/key details for the following items:\n  * mode – Activate and deactivate window mode",
+        "parameters" : [
+          " * mapping – A table containing hotkey modifier\/key details for the following items:",
+          "  * mode – Activate and deactivate window mode"
+        ],
         "notes" : [
 
         ],
@@ -65,10 +45,7 @@
 
         ],
         "name" : "bindModal",
-        "parameters" : [
-          " * mapping – A table containing hotkey modifier\/key details for the following items:",
-          "  * mode – Activate and deactivate window mode"
-        ]
+        "desc" : "Bind keys for WindowMode"
       }
     ],
     "Command" : [
@@ -77,7 +54,30 @@
     "Field" : [
 
     ],
-    "doc" : "Adds a hotkey mode for manipulating windows.\n\nUpon activating the mode, the following shortcuts are available:\n\nh: Move window left 100 units\nj: Move window down 100 units\nk: Move window up 100 units\nl: Move window right 100 units\n\nShift-h: Move window left 20 units\nShift-j: Move window down 20 units\nShift-k: Move window up 20 units\nShift-l: Move window right 20 units\n\nOption-h: Move window left 5 units\nOption-j: Move window down 5 units\nOption-k: Move window up 5 units\nOption-l: Move window right 5 units\n\ni: Move window to top\n\n[: Move window left one screen\n]: Move window right one screen\n\ne: Reduce window height 100 units\ns: Reduce window width 100 units\nd: Increase window height 100 units\nf: Increase window width 100 units\n\nShift-e: Reduce window height 20 units\nShift-s: Reduce window width 20 units\nShift-d: Increase window height 20 units\nShift-f: Increase window width 20 units\n\nOption-e: Reduce window height 5 units\nOption-s: Reduce window width 5 units\nOption-d: Increase window height 5 units\nOption-f: Increase window width 5 units",
+    "items" : [
+      {
+        "doc" : "Bind keys for WindowMode\n\nParameters:\n * mapping – A table containing hotkey modifier\/key details for the following items:\n  * mode – Activate and deactivate window mode",
+        "def" : "WindowMode:bindModal(mapping)",
+        "stripped_doc" : [
+          "Bind keys for WindowMode",
+          ""
+        ],
+        "parameters" : [
+          " * mapping – A table containing hotkey modifier\/key details for the following items:",
+          "  * mode – Activate and deactivate window mode"
+        ],
+        "notes" : [
+
+        ],
+        "signature" : "WindowMode:bindModal(mapping)",
+        "type" : "Method",
+        "returns" : [
+
+        ],
+        "name" : "bindModal",
+        "desc" : "Bind keys for WindowMode"
+      }
+    ],
     "name" : "WindowMode"
   }
 ]

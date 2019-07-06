@@ -38,6 +38,8 @@
 --- Option-s: Reduce window width 5 units
 --- Option-d: Increase window height 5 units
 --- Option-f: Increase window width 5 units
+---
+--- c: Increase window height to bottom
 
 -- Copyright (c) 2019  Teddy Wing
 --

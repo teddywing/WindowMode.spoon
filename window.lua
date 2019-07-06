@@ -48,6 +48,8 @@ local units = {
 	decrease_up_lg   = { w = 0,   h = -100 },
 	decrease_left_lg = { w = -100,  h = 0 },
 
+	increase_down_maximum = { w = 0, h = 1.0 },
+
 	maximum = { x = 0.00, y = 0.00, w = 1.00, h = 1.00 }
 }
 
@@ -181,6 +183,15 @@ function window.decrease_left_lg()
 	)
 end
 
+function window.increase_down_maximum()
+	local duration = 0
+	local window = hs.window.focusedWindow()
+	local frame = window:frame()
+	frame.h = hs.screen.mainScreen():frame().h
+
+	window:setFrame(frame, duration)
+end
+
 
 function window.move_to_top()
 	local position = hs.window.focusedWindow():topLeft()
@@ -230,6 +241,8 @@ function window:bindModal(modifiers, keycode)
 	window_mode:bind({}, 'd', window.increase_down_lg,  nil, window.increase_down_lg)
 	window_mode:bind({}, 'f', window.increase_right_lg, nil, window.increase_right_lg)
 	window_mode:bind({}, 's', window.decrease_left_lg,  nil, window.decrease_left_lg)
+
+	window_mode:bind({}, 'c', window.increase_down_maximum,  nil, window.increase_down_maximum)
 end
 
 return window

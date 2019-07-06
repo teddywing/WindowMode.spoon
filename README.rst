@@ -75,6 +75,10 @@ Upon activating the mode, the following shortcuts are available:
 | ``Option-f`` | Increase window width 5 units  |
 +--------------+--------------------------------+
 
++-------+----------------------------------+
+| ``c`` | Increase window height to bottom |
++-------+----------------------------------+
+
 
 Install
 -------
